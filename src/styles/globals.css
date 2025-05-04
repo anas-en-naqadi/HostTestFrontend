@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  /* Re‑expose the CSS var for Tailwind to pick up */
+  --font-lora: var(--font-lora);
+}
+
+.font-lora {
+  font-family: var(--font-lora);
+}
+
+.bg-gradient-custom {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    linear-gradient(249.74deg, #136a86 -0.99%, #5cb5bd 54.35%, #136a86 98.92%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Ultra Thin Modern Scrollbar */
+/* Firefox */
+html {
+  scrollbar-width: thin;  /* 'thin' is the smallest Firefox allows */
+  scrollbar-color: #4a9fa8 transparent;  /* thumb color with transparent track */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;  /* Ultra thin - can't go smaller than 4px for usability */
+  height: 6px;  /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;  /* Fully transparent track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a9fa8;
+  border-radius: 3px;  /* Matches the thin width */
+  transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #317076;
+  width: 8px;  /* Slightly expands on hover */
+}
+
+/* Completely remove all buttons and corners */
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Optional: Make the thumb invisible until hover */
+body:not(:hover)::-webkit-scrollbar-thumb {
+  background: transparent;
+}

@@ -75,7 +75,6 @@ export default function NavBar({
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
     setShowResults(true);
-    resetFilters();
     setIsFilteredOpened(false);
   };
 

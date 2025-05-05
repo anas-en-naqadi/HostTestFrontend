@@ -249,13 +249,25 @@ export default function CourseOverView() {
                       Already Enrolled in
                     </span>
                   ) : (
-                    <span
+                    <button
                       onClick={() => enrollNewCourse()}
-                      className="bg-cyan-800 w-full mt-2 xl:mt-4 h-12 rounded-md text-white font-semibold flex items-center cursor-pointer justify-center"
+                      disabled={isPending}
+                      type="button"
+                      className={`
+                        ${isPending ? "cursor-not-allowed" : "cursor-pointer"}
+                        bg-cyan-800
+                        w-full
+                        mt-2 xl:mt-4
+                        h-12
+                        rounded-md
+                        text-white
+                        font-semibold
+                        flex items-center justify-center
+                      `}
                     >
                                     
                                     {isPending ? (<><Loader2 className="h-5 w-5 animate-spin text-white mr-2" /> LOADING...</> ) : 'START COURSE'}
-                    </span>
+                    </button>
                   )}
 
                   <button

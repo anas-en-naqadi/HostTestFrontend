@@ -1,6 +1,0 @@
-User-agent: *
-Disallow: /
-Noindex: /
-
-# Disables all web crawlers from indexing the entire site
-# This prevents search engines from indexing the e-learning platform
